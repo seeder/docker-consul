@@ -17,7 +17,7 @@ main() {
 		--retry 2 \
 		$opts \
 		http://$ip:$port$path > /dev/null"
-	docker run --rm --net container:$container_id --entrypoint "/bin/bash" $IMAGE -c "$curl_cmd"
+	docker exec $container_id "$curl_cmd"
 }
 
 main $@
