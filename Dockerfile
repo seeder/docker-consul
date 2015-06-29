@@ -1,5 +1,5 @@
 FROM 	ubuntu:trusty
-MAINTAINER 	Jeff Lindsay <progrium@gmail.com>
+MAINTAINER 	Mateusz Pawlowski
 
 RUN apt-get install -y curl bash ca-certificates unzip 
 
