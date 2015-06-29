@@ -1,6 +1,7 @@
 #!/bin/bash
 
-readonly IMAGE="progrium/consul"
+set -x 
+readonly IMAGE="consul:a"
 readonly EXPECT="${EXPECT:-3}"
 
 cmd-run() {
@@ -40,9 +41,10 @@ EOF
 
 main() {
 	set -eo pipefail
+  which consul
 	case "$1" in
 	cmd:run)            shift; cmd-run $@;;
-	*)                  exec /bin/consul agent -config-dir=/config $@;;
+	*)                  exec consul agent -config-dir=/config $@;;
 	esac
 }
 
