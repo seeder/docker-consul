@@ -9,7 +9,7 @@ RUN cd /bin && unzip /tmp/consul.zip && chmod +x /bin/consul && rm /tmp/consul.z
 ADD https://dl.bintray.com/mitchellh/consul/0.5.2_web_ui.zip /tmp/webui.zip
 RUN mkdir /ui && cd /ui && unzip /tmp/webui.zip && rm /tmp/webui.zip && mv dist/* . && rm -rf dist
 
-ADD https://get.docker.com/builds/Linux/x86_64/docker-latest /bin/docker
+ADD https://get.docker.com/builds/Linux/x86_64/docker-1.6.2 /bin/docker
 RUN chmod +x /bin/docker
 
 
