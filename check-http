@@ -17,7 +17,8 @@ main() {
 		--retry 2 \
 		$opts \
 		http://$ip:$port$path > /dev/null"
-	docker exec $container_id "$curl_cmd"
+	#docker exec $container_id $curl_cmd
+  $curl_cmd
 }
 
 main $@
