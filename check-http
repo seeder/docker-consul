@@ -9,15 +9,14 @@ main() {
 	local opts="$@"
 	
 	local ip="$(docker inspect -f "{{.NetworkSettings.IPAddress}}" $container_id)"
-	local curl_cmd="curl \
+  curl \
 		--silent \
 		--show-error \
 		--fail \
 		--dump-header /dev/stderr \
 		--retry 2 \
 		$opts \
-		http://$ip:$port$path > /dev/null"
-	docker exec $container_id "$curl_cmd"
+		http://$ip:$port$path > /dev/null
 }
 
 main $@
